@@ -1,0 +1,103 @@
+.card-stats.hover-effect:hover {
+    transform: scale(1.20); 
+    transition: transform 0.3s ease; 
+  }
+  /* Dashboard.css */
+  
+  /* Content Container */
+  .content {
+    padding: 20px;
+  }
+  
+  /* Card Styles */
+  .card-stats {
+    margin-bottom: 20px;
+  }
+  
+  .card-stats .card-category {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .card-stats .numbers p {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Chart Container */
+  .chart-container {
+    margin-bottom: 20px;
+  }
+  
+  /* Chart Title */
+  .chart-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Chart Legend */
+  .chart-legend {
+    font-size: 14px;
+  }
+  
+  /* Stats */
+  .stats {
+    font-size: 12px;
+    color: #888;
+  }
+  
+  
+  /* CircularScoreMeter.css */
+  .circular-score-meter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  svg {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .background-circle {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 6;
+  }
+  
+  .score-circle {
+    fill: none;
+    stroke: #4CAF50;
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.5s ease-in-out;
+  }
+  
+  .indicator {
+    stroke: #4CAF50;
+    stroke-width: 2;
+  }
+  
+  .score-text {
+    font-size: 20px;
+    fill: #4CAF50;
+    font-weight: bold;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
