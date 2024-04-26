@@ -7,7 +7,7 @@ fs.readFile('./db.json', 'utf8', (err, data) => {
     }
 
     const buildingsData = JSON.parse(data); // Move this line inside the callback
-
+    map= {"residential": 0, "industrial": 1, "commercial": 2, "power-plant": 3, "road": 4, "tree": 5, "power-line": 6}
                                                                                       
     const arr = Array.from({length: 16}, () => Array.from({length: 16}, () => 5));
 
