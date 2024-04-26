@@ -1,0 +1,417 @@
+[
+  {
+    "x": 13,
+    "y": 6,
+    "buildingType": "residential"
+  },
+  {
+    "x": 13,
+    "y": 5,
+    "buildingType": "residential"
+  },
+  {
+    "x": 14,
+    "y": 4,
+    "buildingType": "residential"
+  },
+  {
+    "x": 14,
+    "y": 3,
+    "buildingType": "residential"
+  },
+  {
+    "x": 13,
+    "y": 3,
+    "buildingType": "residential"
+  },
+  {
+    "x": 12,
+    "y": 3,
+    "buildingType": "residential"
+  },
+  {
+    "x": 11,
+    "y": 4,
+    "buildingType": "residential"
+  },
+  {
+    "x": 10,
+    "y": 4,
+    "buildingType": "residential"
+  },
+  {
+    "x": 10,
+    "y": 5,
+    "buildingType": "residential"
+  },
+  {
+    "x": 11,
+    "y": 6,
+    "buildingType": "residential"
+  },
+  {
+    "x": 11,
+    "y": 7,
+    "buildingType": "residential"
+  },
+  {
+    "x": 12,
+    "y": 7,
+    "buildingType": "residential"
+  },
+  {
+    "x": 13,
+    "y": 7,
+    "buildingType": "residential"
+  },
+  {
+    "x": 14,
+    "y": 6,
+    "buildingType": "residential"
+  },
+  {
+    "x": 14,
+    "y": 5,
+    "buildingType": "residential"
+  },
+  {
+    "x": 15,
+    "y": 5,
+    "buildingType": "residential"
+  },
+  {
+    "x": 13,
+    "y": 4,
+    "buildingType": "residential"
+  },
+  {
+    "x": 12,
+    "y": 5,
+    "buildingType": "residential"
+  },
+  {
+    "x": 12,
+    "y": 6,
+    "buildingType": "residential"
+  },
+  {
+    "x": 12,
+    "y": 4,
+    "buildingType": "residential"
+  },
+  {
+    "x": 11,
+    "y": 5,
+    "buildingType": "residential"
+  },
+  {
+    "x": 4,
+    "y": 15,
+    "buildingType": "industrial"
+  },
+  {
+    "x": 4,
+    "y": 14,
+    "buildingType": "industrial"
+  },
+  {
+    "x": 4,
+    "y": 13,
+    "buildingType": "industrial"
+  },
+  {
+    "x": 3,
+    "y": 13,
+    "buildingType": "industrial"
+  },
+  {
+    "x": 3,
+    "y": 12,
+    "buildingType": "industrial"
+  },
+  {
+    "x": 2,
+    "y": 12,
+    "buildingType": "industrial"
+  },
+  {
+    "x": 2,
+    "y": 13,
+    "buildingType": "industrial"
+  },
+  {
+    "x": 2,
+    "y": 14,
+    "buildingType": "industrial"
+  },
+  {
+    "x": 2,
+    "y": 15,
+    "buildingType": "industrial"
+  },
+  {
+    "x": 1,
+    "y": 15,
+    "buildingType": "industrial"
+  },
+  {
+    "x": 1,
+    "y": 14,
+    "buildingType": "industrial"
+  },
+  {
+    "x": 1,
+    "y": 13,
+    "buildingType": "industrial"
+  },
+  {
+    "x": 3,
+    "y": 14,
+    "buildingType": "industrial"
+  },
+  {
+    "x": 10,
+    "y": 7,
+    "buildingType": "road"
+  },
+  {
+    "x": 9,
+    "y": 6,
+    "buildingType": "road"
+  },
+  {
+    "x": 9,
+    "y": 7,
+    "buildingType": "road"
+  },
+  {
+    "x": 8,
+    "y": 7,
+    "buildingType": "road"
+  },
+  {
+    "x": 8,
+    "y": 8,
+    "buildingType": "road"
+  },
+  {
+    "x": 7,
+    "y": 8,
+    "buildingType": "road"
+  },
+  {
+    "x": 7,
+    "y": 9,
+    "buildingType": "road"
+  },
+  {
+    "x": 6,
+    "y": 9,
+    "buildingType": "road"
+  },
+  {
+    "x": 6,
+    "y": 10,
+    "buildingType": "road"
+  },
+  {
+    "x": 5,
+    "y": 10,
+    "buildingType": "road"
+  },
+  {
+    "x": 5,
+    "y": 11,
+    "buildingType": "road"
+  },
+  {
+    "x": 5,
+    "y": 12,
+    "buildingType": "road"
+  },
+  {
+    "x": 4,
+    "y": 12,
+    "buildingType": "road"
+  },
+  {
+    "x": 11,
+    "y": 1,
+    "buildingType": "power-plant"
+  },
+  {
+    "x": 10,
+    "y": 1,
+    "buildingType": "power-plant"
+  },
+  {
+    "x": 9,
+    "y": 1,
+    "buildingType": "power-plant"
+  },
+  {
+    "x": 8,
+    "y": 1,
+    "buildingType": "power-plant"
+  },
+  {
+    "x": 11,
+    "y": 0,
+    "buildingType": "power-plant"
+  },
+  {
+    "x": 10,
+    "y": 0,
+    "buildingType": "power-plant"
+  },
+  {
+    "x": 9,
+    "y": 0,
+    "buildingType": "power-plant"
+  },
+  {
+    "x": 8,
+    "y": 0,
+    "buildingType": "power-plant"
+  },
+  {
+    "x": 7,
+    "y": 0,
+    "buildingType": "road"
+  },
+  {
+    "x": 7,
+    "y": 1,
+    "buildingType": "road"
+  },
+  {
+    "x": 7,
+    "y": 2,
+    "buildingType": "road"
+  },
+  {
+    "x": 8,
+    "y": 2,
+    "buildingType": "road"
+  },
+  {
+    "x": 9,
+    "y": 2,
+    "buildingType": "road"
+  },
+  {
+    "x": 10,
+    "y": 2,
+    "buildingType": "road"
+  },
+  {
+    "x": 11,
+    "y": 2,
+    "buildingType": "road"
+  },
+  {
+    "x": 11,
+    "y": 3,
+    "buildingType": "road"
+  },
+  {
+    "x": 10,
+    "y": 3,
+    "buildingType": "road"
+  },
+  {
+    "x": 9,
+    "y": 3,
+    "buildingType": "road"
+  },
+  {
+    "x": 9,
+    "y": 4,
+    "buildingType": "road"
+  },
+  {
+    "x": 9,
+    "y": 5,
+    "buildingType": "road"
+  },
+  {
+    "x": 10,
+    "y": 6,
+    "buildingType": "road"
+  },
+  {
+    "x": 12,
+    "y": 2,
+    "buildingType": "road"
+  },
+  {
+    "x": 13,
+    "y": 2,
+    "buildingType": "road"
+  },
+  {
+    "x": 14,
+    "y": 2,
+    "buildingType": "road"
+  },
+  {
+    "x": 15,
+    "y": 3,
+    "buildingType": "road"
+  },
+  {
+    "x": 15,
+    "y": 4,
+    "buildingType": "road"
+  },
+  {
+    "x": 15,
+    "y": 2,
+    "buildingType": "road"
+  },
+  {
+    "x": 4,
+    "y": 11,
+    "buildingType": "road"
+  },
+  {
+    "x": 3,
+    "y": 11,
+    "buildingType": "road"
+  },
+  {
+    "x": 2,
+    "y": 11,
+    "buildingType": "road"
+  },
+  {
+    "x": 1,
+    "y": 11,
+    "buildingType": "road"
+  },
+  {
+    "x": 1,
+    "y": 12,
+    "buildingType": "road"
+  },
+  {
+    "x": 0,
+    "y": 12,
+    "buildingType": "road"
+  },
+  {
+    "x": 0,
+    "y": 13,
+    "buildingType": "road"
+  },
+  {
+    "x": 0,
+    "y": 15,
+    "buildingType": "road"
+  },
+  {
+    "x": 0,
+    "y": 14,
+    "buildingType": "road"
+  }
+]

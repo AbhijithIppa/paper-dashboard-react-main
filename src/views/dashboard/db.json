@@ -1,0 +1,67 @@
+[
+  {
+    "x": 14,
+    "y": 8,
+    "buildingType": "residential"
+  },
+  {
+    "x": 13,
+    "y": 8,
+    "buildingType": "residential"
+  },
+  {
+    "x": 12,
+    "y": 8,
+    "buildingType": "residential"
+  },
+  {
+    "x": 11,
+    "y": 8,
+    "buildingType": "residential"
+  },
+  {
+    "x": 11,
+    "y": 7,
+    "buildingType": "residential"
+  },
+  {
+    "x": 10,
+    "y": 5,
+    "buildingType": "residential"
+  },
+  {
+    "x": 10,
+    "y": 4,
+    "buildingType": "residential"
+  },
+  {
+    "x": 11,
+    "y": 4,
+    "buildingType": "residential"
+  },
+  {
+    "x": 12,
+    "y": 4,
+    "buildingType": "residential"
+  },
+  {
+    "x": 12,
+    "y": 5,
+    "buildingType": "residential"
+  },
+  {
+    "x": 13,
+    "y": 5,
+    "buildingType": "residential"
+  },
+  {
+    "x": 13,
+    "y": 6,
+    "buildingType": "residential"
+  },
+  {
+    "x": 14,
+    "y": 6,
+    "buildingType": "residential"
+  }
+]
