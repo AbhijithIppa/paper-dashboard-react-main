@@ -1,7 +1,7 @@
 
 import Dashboard from "./views/dashboard/Dashboard.js";
 import Notifications from "views/Notifications.js";
-import Icons from "views/Icons.js";
+import Icons from "views/Rewards/Icons.js";
 import Typography from "views/Typography.js";
 import TableList from "views/Statistics.js";
 import Score from "views/Score.js";
@@ -16,18 +16,26 @@ var routes = [
     component: <Dashboard />,
     layout: "/admin",
   },
+
   {
     path: "/tables",
-    name: "Statistics",
+    name: "Find best",
     icon: "fas fa-chart-bar text",
     component: <TableList />,
+    layout: "/admin",
+  },
+  {
+    path: "/user-page",
+    name: "Traffic",
+    icon: "nc-icon nc-single-02",
+    component: <UserPage />,
     layout: "/admin",
   },
     
   {
     path: "/maps",
     name: "Score",
-    icon: "nc-icon nc-tile-56",
+    icon: "fas fa-star text",
     component: <Score />,
     layout: "/admin",
   },
@@ -38,27 +46,21 @@ var routes = [
     component: <Icons />,
     layout: "/admin",
   },
-  {
-    path: "/notifications",
-    name: "Notifications",
-    icon: "nc-icon nc-bell-55",
-    component: <Notifications />,
-    layout: "/admin",
-  },
-  {
-    path: "/user-page",
-    name: "User Profile",
-    icon: "nc-icon nc-single-02",
-    component: <UserPage />,
-    layout: "/admin",
-  },
+  // {
+  //   path: "/notifications",
+  //   name: "Notifications",
+  //   icon: "nc-icon nc-bell-55",
+  //   component: <Notifications />,
+  //   layout: "/admin",
+  // },
+  
 
-  {
-    path: "/typography",
-    name: "Score",
-    icon: "fas fa-star text",
-    component: <Typography />,
-    layout: "/admin",
-  }
+  // {
+  //   path: "/typography",
+  //   name: "Score",
+  //   icon: "fas fa-star text",
+  //   component: <Typography />,
+  //   layout: "/admin",
+  // }
 ];
 export default routes;

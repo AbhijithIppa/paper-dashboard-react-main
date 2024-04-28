@@ -1,4 +1,3 @@
-
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import joblib
@@ -7,8 +6,14 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 import pandas as pd,math
-# import buildingData from 'D:/abhijith/MERN/dholakpur_developers/paper-dashboard-react-main/src/db.json';
+import json
 
+# Assuming the JSON file is located at 'D:/abhijith/MERN/dholakpur_developers/paper-dashboard-react-main/src/db.json'
+json_file_path = 'D:/abhijith/MERN/dholakpur_developers/paper-dashboard-react-main/src/db.json'
+
+# Open the JSON file and load the data
+with open(json_file_path, 'r') as file:
+    building_data = json.load(file)
 app = Flask(__name__)
 CORS(app, origins='*')
 
@@ -21,9 +26,13 @@ def predict():
     Connections_CR = data['Connections_CR']
     Connections_IR = data['Connections_IR']
     Connections_IC = data['Connections_IC']
+
     
-    scaler = joblib.load('D:/abhijith/MERN/dholakpur_developers/my_react/ml/traffic/traffic_scaler.pkl')   
-    loaded_model = joblib.load('D:/abhijith/MERN/dholakpur_developers/my_react/ml/traffic/traffic_model.sav')
+   
+    
+    
+    scaler = joblib.load('D:/abhijith/MERN/dholakpur_developers/paper-dashboard-react-main/ml/traffic/traffic_scaler.pkl')   
+    loaded_model = joblib.load('D:/abhijith/MERN/dholakpur_developers/paper-dashboard-react-main/ml/traffic/traffic_model.sav')
     
     input_features = [[Commercial, Residential, Industrial, Connections_CR, Connections_IR, Connections_IC]]
     input_features_scaled = scaler.transform(input_features)
@@ -31,7 +40,6 @@ def predict():
     predicted_traffic_volume_scaled = loaded_model.predict(input_features_scaled)
     
     return jsonify({'predicted_traffic_volume_scaled': predicted_traffic_volume_scaled.tolist()})
-
 
 @app.route('/predict_air_pollution', methods=['POST'])
 def predict_air_pollution():
@@ -62,7 +70,7 @@ def train_and_evaluate_regression(num_industries, num_power_houses, num_vehicles
             return x
     
     
-    data = pd.read_csv('D:/abhijith/MERN/dholakpur_developers/my_react/ml/traffic/air_pollution_dataset.csv')
+    data = pd.read_csv('D:/abhijith/MERN/dholakpur_developers/paper-dashboard-react-main/ml/traffic/air_pollution_dataset.csv')
 
     # Splitting into features and target variable
     X = data.drop(columns=['Air Pollution Index'])
@@ -112,31 +120,43 @@ def forecast_power_price():
     forecasted_prices = power_price()
     return jsonify({'forecasted_prices': forecasted_prices})
 
-@app.route('/knn', methods=['GET'])
-
-def knn_alg(x_cor, y_cor):
+@app.route('/knn', methods=['POST'])
+def knn():
     import pandas as pd
     from sklearn.neighbors import KNeighborsClassifier
-    
-    map_dict = {"residential": 0, "industry": 1, "commercial": 2, "power-plant": 3, "road": 4, "tree": 5, "power-line": 6}
+
+
+    data = request.get_json()
+    print(data)
+    x_cor = data['x_cor']
+    y_cor = data['y_cor']
+
+    map_dict = {"residential": 0, "industrial": 1, "commercial": 2, "power-plant": 3, "road": 4, "tree": 5, "power-line": 6}
 
     # Create DataFrame
-    df = pd.DataFrame(buildingData)
+    df = pd.DataFrame(building_data)
+
+    # Drop rows with missing or empty values in 'x' or 'y' columns
+    df = df.dropna(subset=['x', 'y'])
+    df = df[(df['x'] != '') & (df['y'] != '')]
 
     # Map buildingType
     df['buildingType_mapped'] = df['buildingType'].map(map_dict)
-
-    # Drop NaN values
-    df.dropna(inplace=True)
 
     # Filter out 'road' type
     df = df[df['buildingType_mapped'] != 4]
 
     X = df[['x', 'y']]
     y = df['buildingType_mapped']
+    if y.isnull().any():
+    # Handle NaN values (e.g., remove rows or impute values)
+        df = df.dropna(subset=['buildingType_mapped'])
+    # Check for NaN values in target variable y
+    # if y.isnull().any():
+    #     raise ValueError("Input y contains NaN values.")
 
     # Create and fit the KNN model
-    knn = KNeighborsClassifier(n_neighbors=3)
+    knn = KNeighborsClassifier(n_neighbors=4)
     knn.fit(X, y)
 
     # Predict using the trained model
@@ -144,19 +164,10 @@ def knn_alg(x_cor, y_cor):
     new_df_point = pd.DataFrame(new_point)
     predicted_building_type = knn.predict(new_df_point)
 
-    return predicted_building_type[0]
+    # Convert int64 to regular Python integer
+    predicted_building_type = int(predicted_building_type[0])
 
-
-
-
-
-
-
-
-
-
-
-
+    return jsonify({'predicted_building': predicted_building_type})
 
 
 if __name__ == '__main__':

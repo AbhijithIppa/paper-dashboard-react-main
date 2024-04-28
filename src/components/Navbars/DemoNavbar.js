@@ -1,21 +1,4 @@
-/*!
 
-=========================================================
-* Paper Dashboard React - v1.3.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
@@ -37,7 +20,7 @@ import {
 } from "reactstrap";
 
 import routes from "routes.js";
-
+import { MdOutlineSupportAgent } from "react-icons/md";
 function Header(props) {
   const [isOpen, setIsOpen] = React.useState(false);
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
@@ -124,11 +107,17 @@ function Header(props) {
           <span className="navbar-toggler-bar navbar-kebab" />
           <span className="navbar-toggler-bar navbar-kebab" />
         </NavbarToggler>
+
         <Collapse isOpen={isOpen} navbar className="justify-content-end">
           
           
         </Collapse>
+        <Link to="https://mediafiles.botpress.cloud/3e9207f9-857f-4d2a-bd5b-dfe57e9f51e8/webchat/bot.html">
+      <MdOutlineSupportAgent style={{ height: 50 }} />
+    </Link>
+
       </Container>
+
     </Navbar>
   );
 }

@@ -1,0 +1,32 @@
+/* Badge.css */
+.center-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.custom-card {
+  padding: 100px;
+  background-image: url('5675806.jpg');
+  background-size: cover;
+}
+
+.input-container {
+  margin-bottom: 20px; /* Add margin */
+}
+
+.custom-input {
+  width: 500px; /* Adjust size as needed */
+  padding: 10px; /* Add padding */
+  font-size: 16px; /* Adjust font size */
+}
+
+.button-container {
+  text-align: center; /* Center align button */
+}
+
+.custom-button {
+  padding: 10px 20px; /* Add padding */
+  font-size: 16px; /* Adjust font size */
+}

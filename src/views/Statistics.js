@@ -1,6 +1,5 @@
-
-import React from "react";
-
+import React, { useEffect } from "react";
+import { useState } from "react";
 // reactstrap components
 import {
   Card,
@@ -12,45 +11,62 @@ import {
   Col,
 } from "reactstrap";
 import { Line, Pie,Bar } from "react-chartjs-2";
+import axios from "axios";
 
 
 
 function Statistics() {
+  let map_dict = {"residential": 0, "industrial": 1, "commercial": 2, "power-plant": 3, "road": 4, "tree": 5, "power-line": 6}
+ 
 
-  const barChartData = {
-    labels:["Houses", "Commercial", "Industries","Roads", "Power Stations", "Base Stations",  "Greenary"],
-    datasets: [
-      {
-        label: "Data",
-        backgroundColor: "rgba(75,192,192,0.2)",
-        borderColor: "rgba(75,192,192,1)",
-        borderWidth: 1,
-        hoverBackgroundColor: "rgba(75,192,192,0.4)",
-        hoverBorderColor: "rgba(75,192,192,1)",
-        data: [65, 59, 80, 81, 56, 55, 40], // Example data for 7 columns
-      },
-    ],
+  const [xCoordinate, setXCoordinate] = useState(0);
+  const [yCoordinate, setYCoordinate] = useState(0);
+  const [knn,setKNN]=useState(0);
+  const [output,setoutput]=useState('');
+  const reverseMapDict = {};
+
+  for (const key in map_dict) {
+      const value = map_dict[key];
+      reverseMapDict[value] = key;
+  }
+  
+  // Function to get the key for a given value
+  function getKeyForValue(value) {
+      setoutput(reverseMapDict[value]);
+      console.log(output);
+  }
+  
+  const handleXChange = (event) => {
+    setXCoordinate(event.target.value);
   };
 
-  const barChartOptions = {
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true,
-        },
-      }],
-    },
-    barThickness: 20, // Decrease bar width
-    responsive: true, // Enable responsiveness
-    maintainAspectRatio: false, // Disable maintaining aspect ratio
-    legend: {
-      display: false, // Hide legend for a cleaner look
-    },
+  const handleYChange = (event) => {
+    setYCoordinate(event.target.value);
   };
+  const handleknn = async () => {
+    console.log(xCoordinate,yCoordinate)
+    const inputData = {
+      x_cor: xCoordinate,
+      y_cor: yCoordinate,
+      
+    };
+
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/knn', inputData);
+      setKNN(response.data.predicted_building);
+      console.log("knn:",knn)
+      getKeyForValue(knn);
+      
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+ 
+  
   return (
     <>
       <div className="content">
-        <Row>
+        {/* <Row>
           <Col md="12">
             <Card>
               <CardHeader>
@@ -114,26 +130,31 @@ function Statistics() {
               </CardBody>
             </Card>
           </Col>
-        </Row>
-        <Row>
-          <Col md="12">
-            <Card className="hover-effect">
-              <CardHeader>
-                <CardTitle tag="h5">Bar Graph Example</CardTitle>
-                <p className="card-category">Seven Columns</p>
-              </CardHeader>
-              <CardBody>
-                <Bar
-                  data={barChartData}
-                  options={barChartOptions}
-                  width={600}
-                  height={300}
-                />
-              </CardBody>
-              
-            </Card>
-          </Col>
-        </Row>
+        </Row> */}
+        <div>
+      <label htmlFor="x-coordinate">X Coordinate:</label>
+      <input 
+        type="number" 
+        id="x-coordinate" 
+        name="x-coordinate" 
+        placeholder="Enter X coordinate"
+        value={xCoordinate}
+        onChange={handleXChange}
+      />
+      
+      <label htmlFor="y-coordinate">Y Coordinate:</label>
+      <input 
+        type="number" 
+        id="y-coordinate" 
+        name="y-coordinate" 
+        placeholder="Enter Y coordinate"
+        value={yCoordinate}
+        onChange={handleYChange}
+      />
+      <button style={{marginLeft:5}} onClick={handleknn}>Check</button>
+      <p>Best predicted_building to place on given coordinatees : {output}</p>
+
+    </div>
       </div>
     </>
   );

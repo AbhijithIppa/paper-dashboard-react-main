@@ -1,37 +1,87 @@
 [
   {
-    "x": 13,
-    "y": 6,
+    "x": 15,
+    "y": 3,
     "buildingType": "residential"
   },
   {
-    "x": 7,
-    "y": 6,
-    "buildingType": "commercial"
+    "x": 14,
+    "y": 3,
+    "buildingType": "residential"
+  },
+  {
+    "x": 13,
+    "y": 3,
+    "buildingType": "residential"
+  },
+  {
+    "x": 11,
+    "y": 5,
+    "buildingType": "power-plant"
+  },
+  {
+    "x": 15,
+    "y": 4,
+    "buildingType": "road"
+  },
+  {
+    "x": 14,
+    "y": 4,
+    "buildingType": "road"
+  },
+  {
+    "x": 13,
+    "y": 4,
+    "buildingType": "road"
   },
   {
     "x": 12,
-    "y": 6,
+    "y": 4,
     "buildingType": "road"
   },
   {
     "x": 11,
-    "y": 6,
-    "buildingType": "road"
-  },
-  {
-    "x": 10,
-    "y": 6,
-    "buildingType": "road"
-  },
-  {
-    "x": 9,
-    "y": 6,
+    "y": 4,
     "buildingType": "road"
   },
   {
     "x": 8,
-    "y": 6,
+    "y": 3,
+    "buildingType": "industrial"
+  },
+  {
+    "x": 7,
+    "y": 3,
+    "buildingType": "industrial"
+  },
+  {
+    "x": 7,
+    "y": 4,
+    "buildingType": "industrial"
+  },
+  {
+    "x": 8,
+    "y": 4,
+    "buildingType": "industrial"
+  },
+  {
+    "x": 8,
+    "y": 5,
+    "buildingType": "industrial"
+  },
+  {
+    "x": 7,
+    "y": 5,
+    "buildingType": "industrial"
+  },
+  {
+    "x": 10,
+    "y": 4,
+    "buildingType": "road"
+  },
+  {
+    "x": 9,
+    "y": 4,
     "buildingType": "road"
   }
 ]

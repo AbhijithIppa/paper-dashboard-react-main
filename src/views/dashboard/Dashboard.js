@@ -78,7 +78,7 @@ function Dashboard() {
     setTotalPopulation(residences * 50);
     setHospitals(commercials / 2);
     setSchools(commercials - hospitals);
-    
+
     // Calculate waste management
     setWasteManagement(residences * 50 + industries * 150);
   }, [buildings]);
@@ -111,8 +111,39 @@ function Dashboard() {
   }, [residences,commercials,industries,powerGrids,roads,buildings]);
 
   console.log(buildings);
-  console.log(residences)
 
+  console.log(residences,commercials,industries,roads,parks);
+
+  const barChartData = {
+    labels:["Houses", "Commercial", "Industries","Roads", "Power Stations", "Greenary"],
+    datasets: [
+      {
+        label: "Data",
+        backgroundColor: "rgba(75,192,192,0.2)",
+        borderColor: "rgba(75,192,192,1)",
+        borderWidth: 1,
+        hoverBackgroundColor: "rgba(75,192,192,0.4)",
+        hoverBorderColor: "rgba(75,192,192,1)",
+        data: [residences,commercials,industries,roads,powerGrids,parks], // Example data for 7 columns
+      },
+    ],
+  };
+
+  const barChartOptions = {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true,
+        },
+      }],
+    },
+    barThickness: 20, // Decrease bar width
+    responsive: true, // Enable responsiveness
+    maintainAspectRatio: false, // Disable maintaining aspect ratio
+    legend: {
+      display: false, // Hide legend for a cleaner look
+    },
+  };
   return (
     <>
       <div className="content">
@@ -285,6 +316,25 @@ function Dashboard() {
         </Row>
         <Row>
           <Col md="12">
+            <Card className="hover-effect">
+              <CardHeader>
+                <CardTitle tag="h5">Bar Graph </CardTitle>
+                <p className="card-category">Details about the city</p>
+              </CardHeader>
+              <CardBody>
+                <Bar
+                  data={barChartData}
+                  options={barChartOptions}
+                  width={600}
+                  height={300}
+                />
+              </CardBody>
+              
+            </Card>
+          </Col>
+        </Row>
+        {/* <Row>
+          <Col md="12">
             <Card>
               <CardHeader>
                 <CardTitle tag="h5">Users Behavior</CardTitle>
@@ -336,7 +386,7 @@ function Dashboard() {
           </Col>
           
         </Row>
-  
+   */}
     
 
       </div>

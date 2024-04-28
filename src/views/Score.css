@@ -1,0 +1,21 @@
+.coordinates-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .coordinates-input label {
+    font-weight: bold;
+  }
+  
+  .coordinates-input input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .coordinates-input input[type="number"]:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
